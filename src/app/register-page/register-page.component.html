@@ -1,0 +1,41 @@
+<div class="site-content">
+    <div class="container">
+        <form class="modal-form" [formGroup]="form" (submit)="register()">
+
+            <!-- Register Form -->
+            <input type="hidden" id="register-card-id" name="card_id" formControlName="card_id">
+            <h5>Создание аккаунта</h5>
+            <div class="row">
+                <div class="form-group col-xs-6" [ngClass]="{'has-error': form.invalid && form.errors.first_name}">
+                    <input type="text" class="form-control" placeholder="First name..." name="first_name"
+                           formControlName="first_name">
+                </div>
+                <div class="form-group col-xs-6" [ngClass]="{'has-error': form.invalid && form.errors.last_name}">
+                    <input type="text" class="form-control" placeholder="Last name..."
+                           name="last_name" formControlName="last_name">
+                </div>
+                <div class="form-group col-xs-6" [ngClass]="{'has-error': form.invalid && form.errors.phone_number}">
+                    <input type="text" class="form-control" placeholder="Phone..." name="phone_number"
+                           formControlName="phone_number">
+                </div>
+                <div class="form-group col-xs-6" [ngClass]="{'has-error': form.invalid && form.errors.expires_on}">
+                    <label class="control-label"
+                           style="display: block; margin-bottom: 0;">Card type</label>
+                    <label class="radio radio-inline">
+                        <input type="radio" name="expires_on" value="{{radioOptions.day}}" checked
+                               formControlName="expires_on"> Daily
+                        <span class="radio-indicator"></span>
+                    </label>
+                    <label class="radio radio-inline">
+                        <input type="radio" name="expires_on" value="{{radioOptions.month}}" formControlName="expires_on">
+                        Monthly
+                        <span class="radio-indicator"></span>
+                    </label>
+                </div>
+            </div>
+            <!-- Register Form / End -->
+
+            <button type="submit" class="btn btn-success btn-block">Создать</button>
+        </form>
+    </div>
+</div>

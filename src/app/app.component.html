@@ -1,0 +1,53 @@
+<!--<register-modal></register-modal>-->
+<!--<user-info-modal></user-info-modal>-->
+<div class="site-wrapper clearfix">
+    <div class="site-overlay" (click)="toggleMenu()"></div>
+
+
+    <!-- Header
+    ================================================== -->
+
+    <!-- Header Mobile -->
+    <div class="header-mobile clearfix" id="header-mobile">
+        <div class="header-mobile__logo">
+            <a>
+                <img src="assets/images/kickerkicker_logo.png" class="header-mobile__logo-img">
+            </a>
+        </div>
+        <div class="header-mobile__inner">
+            <a id="header-mobile__toggle" class="burger-menu-icon" (click)="toggleMenu()"><span
+                    class="burger-menu-icon__line"></span></a>
+        </div>
+    </div>
+
+    <!-- Header Desktop -->
+    <header class="header">
+
+        <!-- Header Primary -->
+        <div class="header__primary">
+            <div class="container">
+                <div class="header__primary-inner">
+
+                    <!-- Main Navigation -->
+                    <nav class="main-nav clearfix">
+                        <ul class="main-nav__list">
+                            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                                <a routerLink="/">Authorize</a>
+                            </li>
+                            <li routerLinkActive="active">
+                                <a routerLink="/players">Players list</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- Main Navigation / End -->
+                </div>
+            </div>
+        </div>
+        <!-- Header Primary / End -->
+
+    </header>
+    <!-- Header / End -->
+
+    <router-outlet></router-outlet>
+
+</div>
